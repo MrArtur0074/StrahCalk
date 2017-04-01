@@ -87,5 +87,37 @@ public class register extends JFrame {
 		label_3.setForeground(Color.RED);
 		label_3.setBounds(10, 182, 215, 14);
 		contentPane.add(label_3);
+		
+		JButton btnNewButton = new JButton("\u0412\u043E\u0439\u0442\u0438");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				label_3.setVisible(false);
+				int k=0;
+				log = textField.getText();
+				pass = textField_1.getText();
+				if (log.equals("ulia") && pass.equals("237154") && k==0 && rdbtnNewRadioButton.isSelected()) {k=1;klent();}
+				if (log.equals("rushan") && pass.equals("09100806") && k==0 && rdbtnNewRadioButton_1.isSelected()) {k=1;agent();}
+				if (log.equals("artur") && pass.equals("04021998") && k==0 && rdbtnNewRadioButton.isSelected()) {k=1;klent();}
+				if (log.equals("zalia") && pass.equals("140013") && k==0 && rdbtnNewRadioButton.isSelected()) {k=1;klent();}
+				if (k==0) label_3.setVisible(true);
+			}
+
+			private void klent() {
+				// TODO Auto-generated method stub
+				klient fr1 = new klient(); 
+				fr1.setVisible(true); 
+				setVisible(false);
+			}
+			
+			private void agent() {
+				agent fr1 = new agent(); 
+				fr1.setVisible(true); 
+				setVisible(false);
+				
+			}
+		});
+		 
+		btnNewButton.setBounds(10, 142, 105, 32);
+		contentPane.add(btnNewButton);
 	}
 }
