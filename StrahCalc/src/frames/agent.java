@@ -122,6 +122,37 @@ public class agent extends JFrame {
 		label_6.setBounds(165, 297, 112, 14);
 		contentPane.add(label_6);
 		
+		JButton button = new JButton("\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (comboBox.getSelectedItem()=="<=50 л.с") k1=(float)(0.6);
+				if (comboBox.getSelectedItem()=="От 50 до 70 л.с.") k1=(float)(1);
+				if (comboBox.getSelectedItem()=="От 70 до 100 л.с.") k1=(float)(1.1);
+				if (comboBox.getSelectedItem()=="От 100 до 120 л.с.") k1=(float)(1.2);
+				if (comboBox.getSelectedItem()=="От 120 до 150 л.с.") k1=(float)(1.4);
+				if (comboBox.getSelectedItem()==">150 л.с.") k1=(float)(1.6);
+				
+				if (comboBox_1.getSelectedItem()=="До 22 лет, стаж до 3 лет") k2=(float)(1.8);
+				if (comboBox_1.getSelectedItem()=="До 22 лет, стаж свыше 3 лет") k2=(float)(1.6);
+				if (comboBox_1.getSelectedItem()=="Свыше 22 лет, стаж до 3 лет") k2=(float)(1.7);
+				if (comboBox_1.getSelectedItem()=="Свыше 22 лет, стаж свыше 3 лет") k2=(float)(1);
+				
+				if (comboBox_2.getSelectedItem()=="Легковой автомобиль") k3=(float)(1980);
+				if (comboBox_2.getSelectedItem()=="Мотоцикл") k3=(float)(1215);
+				if (comboBox_2.getSelectedItem()=="Грузовой автомобиль (>=16 т.)") k3=(float)(3240);
+				if (comboBox_2.getSelectedItem()=="Грузовой автомобиль (<16 т.)") k3=(float)(2025);
+				if (comboBox_2.getSelectedItem()=="Автобус (число мест >=20)") k3=(float)(2025);
+				if (comboBox_2.getSelectedItem()=="Автобус (число мест <20)") k3=(float)(1620);
+				
+				if (comboBox_3.getSelectedItem()=="Ограниченный список водителей") k4=1;
+				if (comboBox_3.getSelectedItem()=="Без ограничения") k4=(float)(1.8);
+				
+				s=k1*k2*k3*k4*k5;
+				label_6.setText(Float.toString(s) + " руб.");
+			}
+		});
+		button.setBounds(10, 253, 124, 33);
+		contentPane.add(button);
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setForeground(Color.RED);
